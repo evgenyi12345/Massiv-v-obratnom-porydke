@@ -4,7 +4,7 @@
 void PrintInfo(const char* str) {
 	int lenght1= std::strlen(str);
 	int reversed_index = 0;
-	char* reversed_string = new char(lenght1 + 1);
+	char* reversed_string = new char[lenght1 + 1];
 	// Выводим первую строку Hello World на экран используя цикл for
 	std::cout << "\n";
 	std::cout << "Вывод первой строки на экран-";
@@ -19,6 +19,7 @@ void PrintInfo(const char* str) {
 	    reversed_index = str[i];
 		reversed_index++;
 	}
+	delete[]reversed_string;
 	std::cout << "\n";
 }
 void PrintInfoInPlace(char* str) {
