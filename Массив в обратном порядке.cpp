@@ -3,30 +3,21 @@
 #include <cstring>
 void PrintInfo(const char* str) {
 	int lenght1= std::strlen(str);
-	int lenght2= std::strlen(str);
+	int reversed_index = 0;
+	char* reversed_string = new char(lenght1 + 1);
 	// Выводим первую строку Hello World на экран используя цикл for
+	std::cout << "\n";
 	std::cout << "Вывод первой строки на экран-";
 	for (int i = 0; i < str[i]; i++) {
 		std::cout << str[i];
 	}
 	
 	// Выводим первую строку Hello World на экран в обратном порядке используя цикл for 
-	std::cout << "\nВывод первой строки в обратном порядке-";
-	for (int i = lenght1 - 1; i >= 0; --i) {
-		std::cout << str[i] ;
-	}
-
-	// Выводим вторую строку Hello World на экран в обратном порядке используя цикл for 
-	std::cout << "\n";
 	std::cout << "\nВывод второй строки в обратном порядке-";
-	for (int i = lenght2 - 1; i >= 0; --i) {
-		std::cout << str[i] ;
-	}
-
-	// Выводим вторую строку Hello World на экран используя цикл for
-	std::cout << "\nВывод второй строки на экран-";
-	for (int i = 0; i < str[i]; i++) {
+	for (int i = lenght1 - 1; i >= 0; --i) {
 		std::cout << str[i];
+	    reversed_index = str[i];
+		reversed_index++;
 	}
 	std::cout << "\n";
 }
@@ -50,9 +41,11 @@ int main() {
 	std::cout << "===Программа начала свою работу!=== " << "\n";
 	
 	char string[] = { "Hello World,Teremoc,Factorial"};
-	char string2[] = { "dlroW olleH,lairotcaF,comereT" };
+	char string2[] = { "dlroW olleH,comereT,lairotcaF" };
 	PrintInfo(string);
+	PrintInfo(string2);
 	PrintInfoInPlace(string);
 	PrintInfoInPlace(string2);
+	
 }
 
